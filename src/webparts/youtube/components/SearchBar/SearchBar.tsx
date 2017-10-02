@@ -14,7 +14,7 @@ export class SearchBar extends React.Component<ISearchBarProps, ISearchBarState>
         };
     }
 
-    render(): React.ReactElement<ISearchBarProps> {
+    public render(): React.ReactElement<ISearchBarProps> {
         {
             return (
                 <div className="search-bar">

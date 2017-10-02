@@ -21,7 +21,7 @@ const VideoListItem = ({ video, onVideoSelect }) => {
       <Image src={imageUrl} />
       <Label>{video.snippet.title}</Label>
     </li>
-  )
+  );
 };
 
 export default VideoListItem;

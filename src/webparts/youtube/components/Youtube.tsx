@@ -5,7 +5,7 @@ import { IYoutubeState } from './IYoutubeState';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { SearchBar } from './SearchBar/SearchBar';
 import { VideoDetail } from './VideoDetail/VideoDetail';
-import { VideoList } from './VideoList/VideoList'
+import { VideoList } from './VideoList/VideoList';
 import * as _ from 'lodash';
 import axios from 'axios';
 
@@ -20,12 +20,14 @@ export default class Youtube extends React.Component<IYoutubeProps, IYoutubeStat
       selectedVideo: null
     };
 
-    this.videoSearch(this.props.apiKey, '', this.props.channelId, this.props.maxResults.toString())
+    this.videoSearch(this.props.apiKey, '', this.props.channelId, this.props.maxResults.toString());
   }
 
   public render(): React.ReactElement<IYoutubeProps> {
 
-    const videoSearch = _.debounce((term) => { this.videoSearch(this.props.apiKey, term, this.props.channelId, this.props.maxResults.toString()) }, 300);
+    const videoSearch = _.debounce((term) => { 
+      this.videoSearch(this.props.apiKey, term, this.props.channelId, this.props.maxResults.toString());
+     }, 300);
 
     return (
       <div className={styles.youtube}>

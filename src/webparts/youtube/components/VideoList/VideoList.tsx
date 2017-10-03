@@ -8,7 +8,7 @@ export const VideoList = (props) => {
                 key={index}
                 video={video}
                 onVideoSelect={props.onVideoSelect} />
-        )
+        );
     });
 
     return (
